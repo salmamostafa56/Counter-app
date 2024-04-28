@@ -23,13 +23,13 @@ pipeline {
                     def awsPassword = sh(script: 'aws ecr get-login-password --region us-east-1', returnStdout: true).trim()
 
                     // Perform Docker login non-interactively
-                    sh "echo '${awsPassword}' | docker login --username AWS --password-stdin 949609334280.dkr.ecr.us-east-1.amazonaws.com"
+                    sh "echo '${awsPassword}' | docker login --username AWS --password-stdin 339712837423.dkr.ecr.us-east-1.amazonaws.com"
 
                     // Tag the image
-                    sh 'docker tag myapp:latest 949609334280.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repository:latest'  // Corrected tag
+                    sh 'docker tag myapp:latest 339712837423.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repository:latest'  // Corrected tag
 
                     // Push the image to ECR
-                    sh 'docker push 949609334280.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repository:latest'  // Corrected tag
+                    sh 'docker push 339712837423.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repository:latest'  // Corrected tag
                 }
             }
         }
